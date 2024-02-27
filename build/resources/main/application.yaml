@@ -1,9 +1,0 @@
-spring:
-  mvc:
-    pathmatch:
-      matching-strategy: ant-path-matcher
-  data:
-    mongodb:
-      uri: mongodb+srv://broker-20:broker-20@mongo-hlg-meios-pagamento01-pl-0.e4wd0.mongodb.net/broker-20?authSource=admin&replicaSet=atlas-ma7kpy-shard-0&readPreference=secondaryPreferred&ssl=true
-  server:
-    port: 9090

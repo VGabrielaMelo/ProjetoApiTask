@@ -10,7 +10,5 @@ import java.util.List;
 @Repository
 public interface NoteRepository extends JpaRepository<NoteEntity, String> {
 
-    List<NoteEntity> findAllByDataCriacao(LocalDateTime dataCriacao);
-
     List<NoteEntity> findAllByCor(CorNote cor);
 }

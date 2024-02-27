@@ -11,8 +11,10 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserRequest {
+
     @NotBlank(message = "Obrigatorio")
     private String email;
+
     @NotBlank(message = "Obrigatorio")
-    private String password;
+    private String senha;
 }

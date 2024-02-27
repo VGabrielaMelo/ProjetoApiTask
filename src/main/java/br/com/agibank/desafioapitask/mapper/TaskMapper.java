@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Component
@@ -16,12 +17,11 @@ public class TaskMapper {
 
     public TaskResponse mapToResponse(TaskEntity taskEntity) {
         TaskResponse response = new TaskResponse();
-        response.setId(taskEntity.getId());
+        response.setId(taskEntity.getIdTask());
         response.setTitulo(taskEntity.getTitulo());
         response.setStatus(taskEntity.getStatus());
         response.setDescricao(taskEntity.getDescricao());
         response.setPrioridade(PrioridadeTask.valueOf(taskEntity.getPrioridade()));
-        response.setDataCriacao(taskEntity.getDataCriacao());
         return response;
     }
 
@@ -31,7 +31,6 @@ public class TaskMapper {
         entity.setStatus(request.getStatus());
         entity.setDescricao(request.getDescricao());
         entity.setPrioridade(request.getPrioridade().name());
-        entity.setDataCriacao(request.getDataCriacao());
         return entity;
     }
 

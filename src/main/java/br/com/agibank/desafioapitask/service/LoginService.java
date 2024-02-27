@@ -16,7 +16,7 @@ public class LoginService {
         UserEntity userEntity = userRepository.findByEmail(userRequest.getEmail())
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
 
-        return userRequest.getPassword().equals(userEntity.getPassword());
+        return userRequest.getSenha().equals(userEntity.getSenha());
     }
 
     public void novoUsuario(UserRequest userRequest) {
@@ -24,7 +24,7 @@ public class LoginService {
             throw new RuntimeException("Email já registrado");
         }
 
-        UserEntity novoUser = new UserEntity(userRequest.getEmail(), userRequest.getPassword());
+        UserEntity novoUser = new UserEntity();
         userRepository.save(novoUser);
     }
 }

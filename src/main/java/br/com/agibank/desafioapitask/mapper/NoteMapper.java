@@ -15,17 +15,15 @@ public class NoteMapper {
         entity.setCor(request.getCor());
         entity.setTitulo(request.getTitulo());
         entity.setDescricao(request.getDescricao());
-        entity.setDataCriacao(request.getDataCriacao());
         return entity;
     }
 
     public NoteResponse entityToResponse(NoteEntity entity) {
         NoteResponse response = new NoteResponse();
-        response.setId(entity.getId());
+        response.setId(entity.getIdAnnotation());
         response.setCor(entity.getCor());
         response.setTitulo(entity.getTitulo());
         response.setDescricao(entity.getDescricao());
-        response.setDataCriacao(entity.getDataCriacao());
         return response;
     }
 
