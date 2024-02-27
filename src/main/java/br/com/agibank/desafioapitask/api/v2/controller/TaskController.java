@@ -6,17 +6,25 @@ import br.com.agibank.desafioapitask.enuns.StatusTask;
 import br.com.agibank.desafioapitask.service.TaskService;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @RestController
 @RequestMapping("v2/tasks")
 public class TaskController {
 
     private TaskService taskService;
+
+
+    // Get todas as tasks
+
+    // Get uma task -> ID
 
     @ApiOperation(value = "Devolve uma lista de tarefas.",
                     notes = "O usuário informa o status das tarefas que deseja analisar.",
@@ -24,14 +32,6 @@ public class TaskController {
     @GetMapping("{status}")
     public List<TaskResponse> getTasks(@PathVariable("status") StatusTask status) {
         return taskService.getTasks(status);
-    }
-
-    @ApiOperation(value = "Devolve uma lista de tarefas.",
-            notes = "O usuário informa o status das tarefas que deseja analisar.",
-            httpMethod = "GET")
-    @GetMapping("{id}")
-    public TaskResponse getTask(@PathVariable("id") String id) {
-        return taskService.getTask(id);
     }
 
     @ApiOperation(value = "Cria novas tarefas.",

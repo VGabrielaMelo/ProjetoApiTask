@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -34,7 +35,6 @@ public class TaskService {
 
         taskEntity.setTitulo(request.getTitulo());
         taskEntity.setDescricao(request.getDescricao());
-        taskEntity.setDataCriacao(LocalDateTime.now());
 
         return taskMapper.mapToResponse(taskRepository.save(taskEntity));
     }

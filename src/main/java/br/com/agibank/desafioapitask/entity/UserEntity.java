@@ -1,14 +1,13 @@
 package br.com.agibank.desafioapitask.entity;
 
 import lombok.*;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
+import javax.persistence.Id;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Data
+@Getter
+@Setter
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,16 +15,11 @@ import javax.persistence.Table;
 public class UserEntity {
 
     @Id
-    private String id;
+    private String idLogin;
 
     @Column
     private String email;
 
     @Column
-    private String password;
-
-    public UserEntity(String email, String password) {
-        this.email = email;
-        this.password = password;
-    }
+    private String senha;
 }

@@ -14,6 +14,4 @@ public interface TaskRepository extends JpaRepository<TaskEntity, String> {
     Optional<TaskEntity> findById(String id);
 
     List<TaskEntity> findAllByStatus(StatusTask status);
-
-    List<TaskEntity> findAllByDataCriacaoBeforeAndStatus(LocalDateTime limite, StatusTask status);
 }

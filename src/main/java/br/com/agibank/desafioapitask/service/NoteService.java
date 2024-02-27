@@ -41,7 +41,6 @@ public class NoteService {
 
         noteEntity.setTitulo(request.getTitulo());
         noteEntity.setDescricao(request.getDescricao());
-        noteEntity.setDataCriacao(LocalDateTime.now());
 
         return noteMapper.entityToResponse(noteRepository.save(noteEntity));
     }

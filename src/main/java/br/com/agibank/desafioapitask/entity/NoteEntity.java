@@ -4,21 +4,23 @@ import br.com.agibank.desafioapitask.enuns.CorNote;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import java.time.LocalDateTime;
 
 @Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "note")
+@Table(name = "annotation")
 public class NoteEntity {
 
      @Id
-     private String id;
+     private String idAnnotation;
+
+     @Column
+     private String usuarioId;
 
      @Column
      private CorNote cor;
@@ -28,7 +30,4 @@ public class NoteEntity {
 
      @Column
      private String descricao;
-
-     @Column(name = "data_criacao")
-     private LocalDateTime dataCriacao;
 }
